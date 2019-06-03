@@ -51,6 +51,10 @@ class Pitch(db.Model):
     def save_pitch(self):
         db.session.add(self)
         db.session.commit()
+    def delete_blog(self):
+        db.session.clear(self)
+        db.session.commit()
+    
 
     def __repr__(self):
         return f'User {self.username}'

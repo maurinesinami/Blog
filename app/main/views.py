@@ -76,4 +76,10 @@ def update_pic(uname):
         path = f'photos/{filename}'
         user.profile_pic_path = path
         db.session.commit()
-    return redirect(url_for('main.profile',uname=uname))   
+    return redirect(url_for('main.profile',uname=uname))
+@main.route('/delete/<int:id>',methods=["GET","POST"])
+def delete(id):
+    deleted = Blog.query.filter_by(id=id).first()
+    db.session.delete(deleted)
+    db.session.commit()
+    return redirect (url_for('main.index'))
