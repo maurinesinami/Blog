@@ -1,8 +1,8 @@
-# Pitch-Perfect
+# My-Blog
 
 ## Description
 This is a blogging application that enables users to log in and create posts. A user can also view posts from other users, comment on them and even delete posts that they created.
-### By Sauda Habib
+### By Maurine Sinami
 
 ## Setup/Installation Requirements
 
