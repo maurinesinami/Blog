@@ -18,9 +18,8 @@ def index():
     if form.validate_on_submit():
 
         pitch = form.pitch.data
-        category = form.category.data
        
-        new_pitch= Pitch(name=pitch,category=category)
+        new_pitch= Pitch(name=pitch)
         new_pitch.save_pitch()
 
     pitches = Pitch.query.all()

@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from sqlalchemy import func
 from datetime import datetime
 @login_manager.user_loader
 def load_user(user_id):
@@ -61,7 +62,7 @@ class Comment(db.Model):
     comment = db.Column(db.String)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     pitch_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
-    
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
