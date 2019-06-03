@@ -21,16 +21,28 @@
     border-radius:5px;border-bottom:3px solid black;" style="font-family: 'Shadows Into Light', cursive;">
     <h2 style="font-family: 'Shadows Into Light', cursive;"><a href="/pitch/{{pitch.id}}">{{pitch.name}}</a></h2>
     <h3 style="font-family: 'Shadows Into Light', cursive;">{{pitch.category}}</h3>
-    </div>
+    <p><strong>Posted on {{pitch.posted_at}}</strong></p>    
+</div>
+
     {%endfor%}
 <br><br>
 </div>
-<div class="col-md-12" style="font-family: 'Shadows Into Light', cursive;font-size: 20px">
-<h5 class="text-center"><strong>Quote of the day</strong></h5>
-{% for quote in quotes %}
-<p>{{quote.quote}}</p>
-by<strong> {{quote.author}}</strong>
-{% endfor%}
+
+<div class="card" style="font-family: 'Shadows Into Light', cursive;font-size: 20px">
+<div class="card-header"></div>
+    <h5 class="text-center"><strong>Quote of the day</strong></h5>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            {% for quote in quotes %}
+          <p>{{quote.quote}}</p>
+          <footer class="blockquote-footer">Developer<cite title="Source Title">{{quote.author}}</cite></footer>
+          {% endfor%}
+        </blockquote>
+      </div>
+    </div><br>
+
+
+
 </div>
 {% if current_user.is_authenticated %}
 

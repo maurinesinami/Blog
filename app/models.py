@@ -46,7 +46,7 @@ class Pitch(db.Model):
     name = db.Column(db.String(255))
     users = db.relationship("User", backref = "pitch", lazy = "dynamic")
     category = db.Column(db.String)
-
+    posted_at=db.Column(db.DateTime, index=True, default=func.now())
     def save_pitch(self):
         db.session.add(self)
         db.session.commit()
@@ -61,7 +61,7 @@ class Comment(db.Model):
     comment = db.Column(db.String)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     pitch_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
-
+    
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
