@@ -16,9 +16,9 @@ This is a blogging application that enables users to log in and create posts. A 
 ## Cloning and running
 Clone the application using git clone(this copies the app onto your device). In your terminal:
 
-  ```  $ git clone https://github.com/saudahabib/writerly/ ```
+  ```  $ git clone https://github.com/maurinesinami/Blog/ ```
 
-  ```  $ cd writerly```
+  ```  $ cd Blog```
 
 ## Creating the virtual environment
 
@@ -42,10 +42,10 @@ Clone the application using git clone(this copies the app onto your device). In 
 ## Testing the Application
 To run the tests for the class files:
 
-  ```  $ python3.6 manage.py test```
+  ```  $ python3.7 manage.py test```
 
 ## Technologies Used
-* Python 3.6
+* Python 3.7
 * Flask
 
 ## Behaviour driven development/ Specifications
@@ -60,6 +60,6 @@ To run the tests for the class files:
 Feel free to reach out to the developer at:
 
 * Mobile: 0714828944
-* Email: saudababs00@gmail.com
+* Email: maurinesinami@gmail.com
 ## License
-MIT License Copyright (c) {2019} Sauda Habib Salim
+MIT License Copyright (c) {2019} Maurine Sinami
