@@ -7,7 +7,7 @@ This is a blogging application that enables users to log in and create posts. A 
 ## Setup/Installation Requirements
 
 ### Prerequisites
-* python3.6
+* python3.7
 * pip
 * Virtual environment(virtualenv)
 * Flask-Mail
