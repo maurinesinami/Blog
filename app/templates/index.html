@@ -22,9 +22,11 @@
     <h2 style="font-family: 'Shadows Into Light', cursive;"><a href="/pitch/{{pitch.id}}">{{pitch.name}}</a></h2>
     <h3 style="font-family: 'Shadows Into Light', cursive;">{{pitch.category}}</h3>
     <p><strong>Posted on {{pitch.posted_at}}</strong></p>    
+    <p><a href="{{url_for('main.delete',id=pitch.id)}}">Delete</a></p>
 </div>
 
     {%endfor%}
+
 <br><br>
 </div>
 
