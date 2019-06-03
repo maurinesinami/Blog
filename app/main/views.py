@@ -4,7 +4,8 @@ from .forms import PitchForm,UpdateProfile,CommentForm
 from .. import db,photos
 from flask_login import login_required, current_user
 from ..models import Pitch, User , Comment
-import markdown2  
+from ..requests import get_quotes
+ 
 import datetime
 
 @main.route('/',methods = ['GET','POST'])
@@ -12,7 +13,8 @@ def index():
     
     form = PitchForm()
 
-    
+    random_quotes = get_quotes()
+
     if form.validate_on_submit():
 
         pitch = form.pitch.data
@@ -23,7 +25,7 @@ def index():
 
     pitches = Pitch.query.all()
     title='Pitch '
-    return render_template('index.html',title=title,new_form=form,pitches=pitches)
+    return render_template('index.html',title=title,new_form=form,pitches=pitches,quotes=random_quotes)
 
 @main.route('/pitch/<int:id>', methods=['GET', 'POST'])
 @login_required
